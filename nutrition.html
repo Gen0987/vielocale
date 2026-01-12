@@ -2,69 +2,233 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nutrition & Légumes de saison – Vie Locale & Activités</title>
+
+  <!-- Base (commun) -->
   <link rel="stylesheet" href="style.css">
+  <!-- Spécifique à cette page -->
   <link rel="stylesheet" href="nutrition.css">
 </head>
+
 <body>
 
-  <header class="header hero">
-    <div class="hero-content">
-      <h1>Nutrition & Légumes de saison</h1>
-      <p>
-        Manger sainement en respectant les saisons et les produits locaux
-      </p>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+      <div class="hero-top">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <span class="brand-name">Vie Locale & Activités</span>
+        </div>
+
+        <nav class="topnav" aria-label="Navigation principale">
+          <a class="pill" href="index.html">Accueil</a>
+          <a class="pill" href="a-propos.html">À propos</a>
+          <a class="pill active" href="nutrition.html" aria-current="page">Nutrition</a>
+        </nav>
+      </div>
+
+      <div class="hero-content">
+        <h1>Nutrition & légumes de saison</h1>
+        <p class="hero-lead">
+          Une page simple et moderne pour mieux manger, avec des idées concrètes
+          autour des produits de saison.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn" href="#legumes">Voir les légumes</a>
+          <a class="btn ghost" href="#conseils">Conseils rapides</a>
+        </div>
+
+        <div class="hero-badges" aria-label="Points clés">
+          <span class="badge">Local</span>
+          <span class="badge">Saison</span>
+          <span class="badge">Simple</span>
+          <span class="badge">Équilibré</span>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
+  <main class="wrap">
 
-    <section class="card intro">
-      <h2>Pourquoi manger de saison ?</h2>
-      <p>
-        Les légumes de saison sont plus riches en nutriments, plus savoureux
-        et meilleurs pour l’environnement.
-      </p>
+    <section class="panel intro">
+      <div class="intro-grid">
+        <div>
+          <h2>Pourquoi manger de saison ?</h2>
+          <p>
+            Les légumes de saison sont souvent plus savoureux et s’intègrent mieux
+            dans une routine alimentaire simple et cohérente. En plus, cela favorise
+            les circuits courts et la diversité dans l’assiette.
+          </p>
+
+          <ul class="checklist">
+            <li>Meilleur goût et meilleure fraîcheur</li>
+            <li>Plus de variété sur l’année</li>
+            <li>Souvent plus accessible côté budget</li>
+            <li>Plus cohérent pour l’environnement</li>
+          </ul>
+        </div>
+
+        <div class="stats" aria-label="Aperçu">
+          <div class="stat">
+            <div class="stat-num">4</div>
+            <div class="stat-label">légumes exemples</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3</div>
+            <div class="stat-label">conseils rapides</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">1</div>
+            <div class="stat-label">objectif : simplicité</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Légumes de saison (exemples)</h2>
+    <section class="panel" id="legumes">
+      <div class="section-head">
+        <div>
+          <h2>Légumes de saison (exemples)</h2>
+          <p class="muted">
+            Exemples génériques (pédagogiques). Tu pourras les adapter selon ton territoire
+            et la période.
+          </p>
+        </div>
+        <div class="chip-row" aria-label="Filtres (visuels)">
+          <span class="chip">Hiver</span>
+          <span class="chip">Printemps</span>
+          <span class="chip">Été</span>
+          <span class="chip">Automne</span>
+        </div>
+      </div>
 
-      <div class="grid">
+      <div class="cards">
 
-        <article class="veg-card">
-          <img src="https://images.unsplash.com/photo-1582515073490-dc84e9e4f2a9?auto=format&fit=crop&w=600&q=80" alt="Carottes">
-          <h3>Carotte</h3>
-          <p>Riche en bêta-carotène, bonne pour la peau et la vision.</p>
+        <article class="food-card">
+          <img
+            src="https://images.unsplash.com/photo-1582515073490-dc84e9e4f2a9?auto=format&fit=crop&w=1200&q=80"
+            alt="Carottes fraîches"
+            loading="lazy">
+          <div class="food-body">
+            <h3>Carotte</h3>
+            <p><strong>Atout :</strong> bêta-carotène (provitamine A), fibres.</p>
+            <p><strong>Idée :</strong> râpée citron/huile d’olive ou rôtie au four.</p>
+            <div class="tag-row">
+              <span class="tag">Croquant</span>
+              <span class="tag">Budget</span>
+            </div>
+          </div>
         </article>
 
-        <article class="veg-card">
-          <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80" alt="Courgette">
-          <h3>Courgette</h3>
-          <p>Légère, hydratante et facile à cuisiner.</p>
+        <article class="food-card">
+          <img
+            src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1200&q=80"
+            alt="Courgettes"
+            loading="lazy">
+          <div class="food-body">
+            <h3>Courgette</h3>
+            <p><strong>Atout :</strong> légère, hydratante, riche en fibres.</p>
+            <p><strong>Idée :</strong> poêlée rapide ou en soupe froide.</p>
+            <div class="tag-row">
+              <span class="tag">Léger</span>
+              <span class="tag">Rapide</span>
+            </div>
+          </div>
         </article>
 
-        <article class="veg-card">
-          <img src="https://images.unsplash.com/photo-1587049352847-15d47b58b1d1?auto=format&fit=crop&w=600&q=80" alt="Poireaux">
-          <h3>Poireau</h3>
-          <p>Riche en fibres, bon pour la digestion.</p>
+        <article class="food-card">
+          <img
+            src="https://images.unsplash.com/photo-1587049352847-15d47b58b1d1?auto=format&fit=crop&w=1200&q=80"
+            alt="Poireaux"
+            loading="lazy">
+          <div class="food-body">
+            <h3>Poireau</h3>
+            <p><strong>Atout :</strong> fibres, goût doux, très polyvalent.</p>
+            <p><strong>Idée :</strong> fondue de poireaux (cuisson douce).</p>
+            <div class="tag-row">
+              <span class="tag">Confort</span>
+              <span class="tag">Cuisson douce</span>
+            </div>
+          </div>
         </article>
 
-        <article class="veg-card">
-          <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="Épinards">
-          <h3>Épinard</h3>
-          <p>Source de fer, vitamines et antioxydants.</p>
+        <article class="food-card">
+          <img
+            src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80"
+            alt="Épinards"
+            loading="lazy">
+          <div class="food-body">
+            <h3>Épinard</h3>
+            <p><strong>Atout :</strong> vitamines, minéraux, antioxydants.</p>
+            <p><strong>Idée :</strong> cuisson très courte + filet d’huile.</p>
+            <div class="tag-row">
+              <span class="tag">Vitamines</span>
+              <span class="tag">Express</span>
+            </div>
+          </div>
         </article>
 
       </div>
     </section>
 
-  </main>
+    <section class="panel split" id="conseils">
+      <div class="split-left">
+        <h2>Conseils nutrition rapides</h2>
+        <p class="muted">
+          Des règles simples qui marchent dans la vraie vie, sans prise de tête.
+        </p>
 
-  <footer class="footer">
-    <p>Vie Locale & Activités — Nutrition & saisonnalité</p>
-  </footer>
+        <div class="tips">
+          <div class="tip">
+            <h3>Cuissons douces</h3>
+            <p>Vapeur, wok rapide, four doux : bon compromis goût / nutriments.</p>
+          </div>
+          <div class="tip">
+            <h3>Assiette colorée</h3>
+            <p>Plus de couleurs = plus de variété de micronutriments.</p>
+          </div>
+          <div class="tip">
+            <h3>Simplicité</h3>
+            <p>2–3 légumes + une protéine + une bonne huile : efficace.</p>
+          </div>
+        </div>
+      </div>
 
-</body>
-</html>
+      <aside class="split-right" aria-label="Assiette équilibrée">
+        <div class="plate">
+          <h3>Assiette équilibrée (repère)</h3>
+          <div class="plate-grid">
+            <div class="plate-item">
+              <span class="plate-k">½</span>
+              <span class="plate-t">Légumes</span>
+              <span class="plate-s">crus + cuits</span>
+            </div>
+            <div class="plate-item">
+              <span class="plate-k">¼</span>
+              <span class="plate-t">Protéines</span>
+              <span class="plate-s">œufs, poisson, légumineuses…</span>
+            </div>
+            <div class="plate-item">
+              <span class="plate-k">¼</span>
+              <span class="plate-t">Féculents</span>
+              <span class="plate-s">riz, pâtes, pain, pommes de terre…</span>
+            </div>
+          </div>
+          <p class="plate-note">
+            Ajoute une <strong>huile de qualité</strong> (olive, colza…) et une <strong>portion de fruit</strong> si besoin.
+          </p>
+        </div>
+      </aside>
+    </section>
 
+    <section class="panel callout">
+      <h2>Prochaine étape</h2>
+      <p>
+        Quand tu auras les autorisations, tu pourras remplacer ces exemples par des
+        légumes réellement proposés au marché, et ajouter un calendrier par mois.
+      </p>
+      <div clas
