@@ -1,45 +1,234 @@
-.hero {
-  background-image: url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80");
-  background-size: cover;
-  background-position: center;
-  position: relative;
+/* ===================================================================
+   Vie Locale & Activités – Base CSS (global)
+   Objectif: propre, moderne, lisible, réutilisable sur toutes les pages
+   =================================================================== */
+
+:root{
+  --bg: #f5f7fb;
+  --text: #111827;
+  --muted: #6b7280;
+
+  --brand: #166534;
+  --brand2: #22c55e;
+
+  --card: #ffffff;
+  --line: rgba(229,231,235,0.95);
+
+  --radius: 18px;
+  --shadow: 0 18px 48px rgba(17,24,39,0.12);
+  --shadowSoft: 0 12px 30px rgba(17,24,39,0.10);
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(900px 400px at 20% 0%, #eafff0 0%, var(--bg) 55%);
+  color: var(--text);
+  line-height: 1.55;
 }
 
-.hero-content {
-  position: relative;
+/* Typography */
+h1, h2, h3{
+  line-height: 1.2;
+  letter-spacing: 0.1px;
+}
+
+h1{ font-size: 2rem; }
+h2{ font-size: 1.35rem; }
+h3{ font-size: 1.1rem; }
+
+p{ margin: 10px 0; }
+strong{ font-weight: 700; }
+
+a{ color: inherit; }
+a:focus{ outline: none; }
+
+/* Simple container */
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header band (works for your a-propos + others) */
+.header{
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
   color: white;
+  padding: 46px 20px;
   text-align: center;
-  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-content h1 {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+.header::after{
+  content:"";
+  position:absolute;
+  inset:-60px -60px auto auto;
+  width: 240px;
+  height: 240px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  filter: blur(0.2px);
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: auto;
+.subtitle{
+  margin-top: 10px;
+  font-size: 1.05em;
+  opacity: 0.95;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.intro {
-  background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
-  border-left: 6px solid #22c55e;
+/* Nav (optional; simple and nice) */
+.nav{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 18px auto 0;
 }
 
-.veg-card img {
+.nav a{
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px);
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.nav a:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.20);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.18);
+}
+
+/* Cards */
+.card{
+  background: var(--card);
+  padding: 22px;
+  margin: 18px 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadowSoft);
+}
+
+.card h2{
+  margin-top: 0;
+  color: #14532d;
+}
+
+/* Highlight block */
+.highlight{
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 60%, #ffffff 100%);
+  border-left: 6px solid var(--brand2);
+}
+
+/* Lists */
+.list{
+  padding-left: 18px;
+  margin: 12px 0 0;
+}
+
+.list li{
+  margin: 8px 0;
+}
+
+.muted{
+  color: var(--muted);
+}
+
+/* Grid helpers */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+/* Generic content cards (e.g. veg cards) */
+.veg-card{
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--shadowSoft);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.veg-card:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.veg-card h3{
+  margin: 4px 0 8px;
+  color: #14532d;
+}
+
+.veg-card img{
   width: 100%;
-  height: 160px;
+  height: 170px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 14px;
   margin-bottom: 10px;
+  border: 1px solid rgba(229,231,235,0.9);
 }
 
+/* Buttons (usable on all pages) */
+.btn{
+  display: inline-block;
+  padding: 11px 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  background: #16a34a;
+  color: white;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 16px 34px rgba(22,163,74,0.28);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.02);
+  box-shadow: 0 20px 44px rgba(22,163,74,0.32);
+}
+
+.btn.ghost{
+  background: #ffffff;
+  color: #14532d;
+  border: 1px solid #bbf7d0;
+  box-shadow: var(--shadowSoft);
+}
+
+/* Footer */
+.footer{
+  text-align: center;
+  padding: 22px 14px;
+  font-size: 0.95em;
+  color: rgba(107,114,128,0.98);
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px){
+  .header{ padding: 40px 16px; }
+  .card{ padding: 18px; }
+}
+
+/* Subtle entrance animation */
+@media (prefers-reduced-motion: no-preference){
+  .card, .veg-card, .btn{
+    animation: rise .35s ease both;
+  }
+  @keyframes rise{
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
