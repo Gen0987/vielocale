@@ -1,8 +1,8 @@
-/* ===================================================================
-   Vie Locale & Activités – Base CSS (global)
-   Objectif: propre, moderne, lisible, réutilisable sur toutes les pages
-   =================================================================== */
+/* =========================================================
+   Vie Locale & Activités — Style global (base)
+   ========================================================= */
 
+/* Variables */
 :root{
   --bg: #f5f7fb;
   --text: #111827;
@@ -19,6 +19,7 @@
   --shadowSoft: 0 12px 30px rgba(17,24,39,0.10);
 }
 
+/* Reset léger */
 *{ box-sizing: border-box; }
 
 html{ scroll-behavior: smooth; }
@@ -32,34 +33,39 @@ body{
   line-height: 1.55;
 }
 
-/* Typography */
+/* Typographie */
 h1, h2, h3{
   line-height: 1.2;
   letter-spacing: 0.1px;
 }
 
 h1{ font-size: 2rem; }
-h2{ font-size: 1.35rem; }
+h2{ font-size: 1.4rem; }
 h3{ font-size: 1.1rem; }
 
 p{ margin: 10px 0; }
 strong{ font-weight: 700; }
 
-a{ color: inherit; }
-a:focus{ outline: none; }
+.muted{ color: var(--muted); }
 
-/* Simple container */
+/* Liens */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Conteneur */
 .container{
-  max-width: 980px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Header band (works for your a-propos + others) */
+/* Header simple (accueil, à propos) */
 .header{
   background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
   color: white;
-  padding: 46px 20px;
+  padding: 48px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -68,12 +74,11 @@ a:focus{ outline: none; }
 .header::after{
   content:"";
   position:absolute;
-  inset:-60px -60px auto auto;
-  width: 240px;
-  height: 240px;
+  inset:-60px auto auto -60px;
+  width: 220px;
+  height: 220px;
   background: rgba(255,255,255,0.12);
   border-radius: 50%;
-  filter: blur(0.2px);
 }
 
 .subtitle{
@@ -85,32 +90,30 @@ a:focus{ outline: none; }
   margin-right: auto;
 }
 
-/* Nav (optional; simple and nice) */
+/* Navigation simple */
 .nav{
   display: flex;
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 18px auto 0;
+  margin-top: 16px;
 }
 
 .nav a{
-  text-decoration: none;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.25);
   backdrop-filter: blur(10px);
-  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .nav a:hover{
   transform: translateY(-2px);
-  background: rgba(255,255,255,0.20);
   box-shadow: 0 18px 44px rgba(0,0,0,0.18);
 }
 
-/* Cards */
+/* Cartes */
 .card{
   background: var(--card);
   padding: 22px;
@@ -125,13 +128,13 @@ a:focus{ outline: none; }
   color: #14532d;
 }
 
-/* Highlight block */
+/* Carte mise en avant */
 .highlight{
   background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 60%, #ffffff 100%);
   border-left: 6px solid var(--brand2);
 }
 
-/* Lists */
+/* Listes */
 .list{
   padding-left: 18px;
   margin: 12px 0 0;
@@ -141,11 +144,7 @@ a:focus{ outline: none; }
   margin: 8px 0;
 }
 
-.muted{
-  color: var(--muted);
-}
-
-/* Grid helpers */
+/* Grille générique */
 .grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -153,7 +152,7 @@ a:focus{ outline: none; }
   margin-top: 14px;
 }
 
-/* Generic content cards (e.g. veg cards) */
+/* Cartes génériques (ex : légumes) */
 .veg-card{
   background: #ffffff;
   border-radius: 16px;
@@ -169,7 +168,7 @@ a:focus{ outline: none; }
 }
 
 .veg-card h3{
-  margin: 4px 0 8px;
+  margin: 6px 0 8px;
   color: #14532d;
 }
 
@@ -182,12 +181,11 @@ a:focus{ outline: none; }
   border: 1px solid rgba(229,231,235,0.9);
 }
 
-/* Buttons (usable on all pages) */
+/* Boutons */
 .btn{
   display: inline-block;
   padding: 11px 14px;
   border-radius: 14px;
-  text-decoration: none;
   background: #16a34a;
   color: white;
   border: 1px solid rgba(0,0,0,0.05);
@@ -216,13 +214,13 @@ a:focus{ outline: none; }
   color: rgba(107,114,128,0.98);
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 520px){
   .header{ padding: 40px 16px; }
   .card{ padding: 18px; }
 }
 
-/* Subtle entrance animation */
+/* Animation légère */
 @media (prefers-reduced-motion: no-preference){
   .card, .veg-card, .btn{
     animation: rise .35s ease both;
