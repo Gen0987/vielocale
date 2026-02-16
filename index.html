@@ -2,10 +2,78 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vie Locale & Activités</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Vie Locale & Activités</h1>
-  <p>Marchés, activités sportives et commerces de proximité</p>
+
+  <header class="header">
+    <h1>Vie Locale & Activités</h1>
+    <p class="subtitle">Marchés, sport et commerces de proximité — version démo</p>
+
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="nutrition.html">Nutrition</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="card highlight">
+      <h2>Le but du site</h2>
+      <p>
+        Ce site est un <strong>projet pédagogique</strong> pour apprendre à créer une plateforme
+        d’information locale. Pour l’instant, le contenu est <strong>général</strong> (pas de données réelles).
+      </p>
+      <p>
+        Ensuite, avec autorisation, il pourra présenter des marchés, des associations sportives et des commerces.
+      </p>
+      <a class="btn" href="a-propos.html">Lire le cadre du projet</a>
+      <a class="btn ghost" href="nutrition.html">Voir la page Nutrition</a>
+    </section>
+
+    <section class="card">
+      <h2>Explorer</h2>
+
+      <div class="grid">
+
+        <article class="veg-card">
+          <h3>Marchés</h3>
+          <p>Infos pratiques, producteurs, horaires (à venir avec autorisations).</p>
+          <a class="btn ghost" href="#">Bientôt</a>
+        </article>
+
+        <article class="veg-card">
+          <h3>Activités sportives</h3>
+          <p>Clubs, entraînements, événements locaux (à venir).</p>
+          <a class="btn ghost" href="#">Bientôt</a>
+        </article>
+
+        <article class="veg-card">
+          <h3>Nutrition</h3>
+          <p>Légumes de saison et conseils simples pour bien manger.</p>
+          <a class="btn" href="nutrition.html">Ouvrir</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Prochaine étape</h2>
+      <ul class="list">
+        <li>Ajouter 2 pages : <strong>marches.html</strong> et <strong>sports.html</strong></li>
+        <li>Créer un menu commun sur toutes les pages</li>
+        <li>Mettre des contenus réels uniquement avec autorisation</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Vie Locale & Activités — Démo GitHub Pages</p>
+  </footer>
+
 </body>
 </html>
